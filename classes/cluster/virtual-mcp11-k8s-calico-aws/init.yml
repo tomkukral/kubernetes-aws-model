@@ -1,0 +1,4 @@
+classes:
+- cluster.virtual-mcp11-k8s-calico-aws.kubernetes
+- cluster.virtual-mcp11-k8s-calico-aws.infra
+- cluster.overrides
