@@ -5,8 +5,6 @@ classes:
 - system.salt.minion.ca.salt_master
 - system.salt.master.api
 - system.salt.minion.cert.k8s_server
-- system.mysql.client
-- system.mysql.client.database.grafana
 - system.reclass.storage.salt
 - system.reclass.storage.system.kubernetes_control_cluster
 - cluster.virtual-mcp11-k8s-calico-aws
