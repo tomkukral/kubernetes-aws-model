@@ -37,7 +37,7 @@ parameters:
           - 8.8.8.8
           - 8.8.4.4
       interface:
-        eth1:
+        eth0:
           route:
             kubernetes_services:
               address: 10.254.0.0
