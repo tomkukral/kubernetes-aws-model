@@ -34,8 +34,8 @@ parameters:
       resolv:
         dns:
           - 10.254.0.10
-          - 172.18.176.4
-          - 172.18.176.7
+          - 8.8.8.8
+          - 8.8.4.4
       interface:
         eth1:
           route:

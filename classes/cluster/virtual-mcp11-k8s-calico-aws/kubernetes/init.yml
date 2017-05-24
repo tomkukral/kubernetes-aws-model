@@ -17,19 +17,17 @@ parameters:
     # addresses and hostnames
     kubernetes_internal_api_address: 10.254.0.1
     kubernetes_control_hostname: ctl
-    kubernetes_control_address: 172.16.10.253
+    kubernetes_control_address: 10.0.10.253
     kubernetes_control_node01_hostname: ctl01
     kubernetes_control_node02_hostname: ctl02
     kubernetes_control_node03_hostname: ctl03
     kubernetes_compute_node01_hostname: cmp01
     kubernetes_compute_node02_hostname: cmp02
-    kubernetes_control_node01_address: 172.16.10.101
-    kubernetes_control_node02_address: 172.16.10.102
-    kubernetes_control_node03_address: 172.16.10.103
-    kubernetes_compute_node01_address: 172.16.10.105
-    kubernetes_compute_node02_address: 172.16.10.106
-    kubernetes_proxy_node01_hostname: prx01
-    kubernetes_proxy_node01_address: 172.16.10.121
+    kubernetes_control_node01_address: 10.0.10.101
+    kubernetes_control_node02_address: 10.0.10.102
+    kubernetes_control_node03_address: 10.0.10.103
+    kubernetes_compute_node01_address: 10.0.10.105
+    kubernetes_compute_node02_address: 10.0.10.106
 
     cluster_vip_address: ${_param:kubernetes_control_address}
     cluster_local_address: ${_param:single_address}
@@ -46,7 +44,7 @@ parameters:
     cluster_node03_port: 4001
 
     # calico
-    calico_private_network: 192.168.0.0
+    calico_private_network: 10.1.0.0
     calico_private_netmask: 16
 
   linux:
@@ -78,21 +76,6 @@ parameters:
           names:
           - ${_param:kubernetes_control_node03_hostname}
           - ${_param:kubernetes_control_node03_hostname}.${_param:cluster_domain}
-        cmp01:
-          address: ${_param:kubernetes_compute_node01_address}
-          names:
-          - ${_param:kubernetes_compute_node01_hostname}
-          - ${_param:kubernetes_compute_node01_hostname}.${_param:cluster_domain}
-        cmp02:
-          address: ${_param:kubernetes_compute_node02_address}
-          names:
-          - ${_param:kubernetes_compute_node02_hostname}
-          - ${_param:kubernetes_compute_node02_hostname}.${_param:cluster_domain}
-        prx01:
-          address: ${_param:kubernetes_proxy_node01_address}
-          names:
-          - ${_param:kubernetes_proxy_node01_hostname}
-          - ${_param:kubernetes_proxy_node01_hostname}.${_param:cluster_domain}
     system:
       rc:
         local: |
