@@ -7,8 +7,8 @@ classes:
 parameters:
   _param:
     kubernetes_calicoctl_image: calico/ctl:latest
-    kubernetes_calico_image: node:latest
-    kubernetes_calico_cni_image: cni:latest
+    kubernetes_calico_image: calico/node:latest
+    kubernetes_calico_cni_image: calico/cni:latest
     kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.6.2
   docker:
     host:
