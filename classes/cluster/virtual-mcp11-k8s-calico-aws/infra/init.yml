@@ -9,7 +9,7 @@ parameters:
   _param:
     # infra service addresses
     infra_config_hostname: cfg01
-    infra_config_address: 10.0.11.10
+    infra_config_address: 10.0.10.10
     infra_config_deploy_address: 10.0.10.10
 
     cluster_domain: virtual-mcp11-k8s-calico.local

@@ -44,8 +44,8 @@ parameters:
     cluster_node03_port: 4001
 
     # calico
-    calico_private_network: 10.1.0.0
-    calico_private_netmask: 16
+    calico_private_network: 10.0.128.0
+    calico_private_netmask: 17
 
   linux:
     network:
