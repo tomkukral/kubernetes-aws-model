@@ -37,3 +37,12 @@ parameters:
           enabled: true
         helm:
           enabled: true
+  keepalived:
+    cluster:
+      instance:
+        VIP:
+          unicast_src_ip: ${_param:cluster_local_address}
+          unicast_peer:
+            - ${_param:cluster_node01_address}
+            - ${_param:cluster_node02_address}
+            - ${_param:cluster_node03_address}
