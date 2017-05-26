@@ -19,8 +19,7 @@ parameters:
     network:
       resolv:
         dns:
-          - 8.8.8.8
-          - 8.8.4.4
+          - 10.0.0.2
       host:
         cfg01:
           address: ${_param:infra_config_address}
