@@ -46,7 +46,7 @@ parameters:
   linux:
     network:
       resolv:
-        domain: virtual-mcp11-k8s-calico.local
+        domain: ${_param:cluster_domain}
         options:
           - ndots:5
           - timeout:2
