@@ -44,8 +44,8 @@ parameters:
               value_template: <<node_ip>>
             cluster_domain:
               value_template: <<node_domain>>
-            kubernetes_control_address:
-              value_template: <<param_kubernetes_control_address>>
+            #kubernetes_control_address:
+            #  value_template: <<param_kubernetes_control_address>>
         kubernetes_control01:
           expression: <<node_hostname>>__equals__ctl01
           cluster_param:
