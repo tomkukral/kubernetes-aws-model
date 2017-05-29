@@ -17,7 +17,7 @@ parameters:
     # addresses and hostnames
     kubernetes_internal_api_address: 10.254.0.1
     kubernetes_control_hostname: ctl
-    kubernetes_control_address: ${_param:kubernetes_control_address}
+    kubernetes_control_address: 10.0.10.11
     kubernetes_control_node01_hostname: ctl01
     kubernetes_control_node02_hostname: ctl02
     kubernetes_control_node03_hostname: ctl03
