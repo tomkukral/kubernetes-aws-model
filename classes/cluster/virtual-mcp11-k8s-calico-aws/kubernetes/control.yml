@@ -3,13 +3,13 @@ classes:
 - system.haproxy.proxy.listen.kubernetes.apiserver
 - system.linux.system.repo.docker
 - system.salt.minion.cert.etcd_server
-- system.kubernetes.master.cluster
 - cluster.virtual-mcp11-k8s-calico-aws.kubernetes.compute
 - cluster.virtual-mcp11-k8s-calico-aws
 parameters:
   _param:
     keepalived_vip_interface: eth0
     keepalived_vip_virtual_router_id: 60
+    kubernetes_apiserver_port: 4430
   etcd:
     server:
       source:
@@ -22,6 +22,8 @@ parameters:
           value: '{"masquerade":true,"cidr":"${_param:calico_private_network}/${_param:calico_private_netmask}"}'
   kubernetes:
     master:
+      apiserver:
+        secure_port: ${_param:kubernetes_apiserver_port}
       etcd:
         ssl:
           enabled: true
@@ -37,8 +39,35 @@ parameters:
           enabled: true
         helm:
           enabled: true
+  haproxy:
+    proxy:
+      listen:
+        k8s_secure:
+          enabled: false
+        k8s_secure_aws:
+          type: kubernetes
+          options:
+            - ssl-hello-chk
+          binds:
+          - address: ${_param:cluster_local_address}
+            port: 443
+          servers:
+          - name: ${_param:cluster_node01_hostname}
+            host: ${_param:cluster_node01_address}
+            port: ${_param:kubernetes_apiserver_port}
+            params: check
+          - name: ${_param:cluster_node02_hostname}
+            host: ${_param:cluster_node02_address}
+            port: ${_param:kubernetes_apiserver_port}
+            params: check
+          - name: ${_param:cluster_node03_hostname}
+            host: ${_param:cluster_node03_address}
+            port: ${_param:kubernetes_apiserver_port}
+            params: check
+
   keepalived:
     cluster:
+      enabled: false
       instance:
         VIP:
           unicast_src_ip: ${_param:cluster_local_address}
