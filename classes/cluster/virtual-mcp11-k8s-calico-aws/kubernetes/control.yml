@@ -45,6 +45,7 @@ parameters:
         k8s_secure:
           enabled: false
         k8s_secure_aws:
+          enabled: true
           type: kubernetes
           options:
             - ssl-hello-chk
