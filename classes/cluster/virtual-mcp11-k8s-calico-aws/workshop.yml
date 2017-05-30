@@ -1,0 +1,14 @@
+parameters:
+  linux:
+    system:
+      user:
+        workshop:
+          name: workshop
+          enabled: true
+          full_name: 'Workshop User'
+          home: /home/workshop
+          sudo: true
+          password: workshopSD
+  openssh:
+    server:
+      password_auth: true
