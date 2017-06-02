@@ -5,7 +5,6 @@ classes:
 - system.linux.system.repo.ubuntu
 - system.openssh.server.team.lab
 - system.openssh.server.team.tcpcloud
-- cluster.virtual-mcp11-k8s-calico-aws.workshop
 parameters:
   _param:
     # infra service addresses
