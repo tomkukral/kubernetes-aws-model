@@ -7,6 +7,10 @@ salt '*' saltutil.refresh_pillar
 salt '*' saltutil.sync_all
 
 # Bootstrap all nodes
+salt -C 'I@kubernetes:pool' state.sls salt.minion
+
+sleep 5
+
 salt -C 'I@kubernetes:pool' state.sls linux,openssh,salt.minion,ntp
 
 # Create and distribute SSL certificates for services using salt state
