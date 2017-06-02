@@ -1,10 +1,10 @@
 #!/bin/bash -xe
 
 # Refresh minion's pillar data
-salt -C 'I@kubernetes:pool' saltutil.refresh_pillar
+salt '*' saltutil.refresh_pillar
 
 # Sync all salt resources
-salt -C 'I@kubernetes:pool' saltutil.sync_all
+salt '*' saltutil.sync_all
 
 # Bootstrap all nodes
 salt -C 'I@kubernetes:pool' state.sls linux,openssh,salt.minion,ntp
