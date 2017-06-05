@@ -17,9 +17,6 @@ salt "*" state.sls linux,openssh,salt.minion,ntp
 # Create and distribute SSL certificates for services using salt state
 salt '*' state.sls salt.minion.cert
 
-# Install keepalived
-salt -C 'I@keepalived:cluster' state.sls keepalived -b 1
-
 # Install haproxy
 salt -C 'I@haproxy:proxy' state.sls haproxy
 salt -C 'I@haproxy:proxy' service.status haproxy
