@@ -62,7 +62,7 @@ parameters:
             kubernetes_control_node03_address:
               value_template: <<node_ip>>
         kubernetes_compute:
-          expression: <<node_hostname>>__startswith__cmp
+          expression: <<node_hostname>>__startswith__ip
           node_class:
             value_template:
               - cluster.<<node_cluster>>.kubernetes.compute
