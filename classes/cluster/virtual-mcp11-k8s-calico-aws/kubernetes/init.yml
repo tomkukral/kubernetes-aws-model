@@ -58,11 +58,11 @@ parameters:
           - timeout:2
           - attempts:2
       host:
-        ctl:
-          address: ${_param:kubernetes_control_address}
-          names:
-          - ${_param:kubernetes_control_hostname}
-          - ${_param:kubernetes_control_hostname}.${_param:cluster_domain}
+        #ctl:
+        #  address: ${_param:kubernetes_control_address}
+        #  names:
+        #  - ${_param:kubernetes_control_hostname}
+        #  - ${_param:kubernetes_control_hostname}.${_param:cluster_domain}
         ctl01:
           address: ${_param:kubernetes_control_node01_address}
           names:
