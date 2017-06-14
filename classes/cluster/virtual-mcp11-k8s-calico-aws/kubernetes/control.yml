@@ -11,6 +11,11 @@ parameters:
     keepalived_vip_interface: eth0
     keepalived_vip_virtual_router_id: 60
     kubernetes_apiserver_port: 4430
+  salt:
+    minion:
+      cert:
+        etcd_server:
+          alternative_names: IP:127.0.0.1,DNS:${_param:cluster_vip_address},IP:${_param:cluster_local_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
   etcd:
     server:
       source:
