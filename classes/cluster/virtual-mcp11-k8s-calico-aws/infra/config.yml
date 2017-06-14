@@ -23,6 +23,10 @@ parameters:
       reactor:
         reclass/minion/classify:
         - salt://reclass/reactor/node_register.sls
+    minion:
+      cert:
+        k8s_server:
+          alternative_names: DNS:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address},DNS:kubernetes.default,DNS:kubernetes.default.svc
   reclass:
     storage:
       class_mapping:
