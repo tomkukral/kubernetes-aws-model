@@ -26,6 +26,11 @@ parameters:
           image: ${_param:kubernetes_calicoctl_image}
         cni:
           image: ${_param:kubernetes_calico_cni_image}
+      kubelet:
+        daemon_opts:
+          container-runtime: remote
+          container-runtime-endpoint: /var/run/crio.sock
+          runtime-request-timeout: 10m
     common:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
