@@ -34,7 +34,7 @@ parameters:
           expression: all
           node_param:
             single_address:
-              value_template: <<node_ip>>
+              value_template: <<node_deploy_ip>>
             linux_system_codename:
               value_template: <<node_os>>
             salt_master_host:
@@ -43,9 +43,9 @@ parameters:
           expression: <<node_hostname>>__startswith__cfg
           cluster_param:
             infra_config_address:
-              value_template: <<node_ip>>
+              value_template: <<node_deploy_ip>>
             infra_config_deploy_address:
-              value_template: <<node_ip>>
+              value_template: <<node_deploy_ip>>
             cluster_domain:
               value_template: <<node_domain>>
             #kubernetes_control_address:
@@ -54,17 +54,17 @@ parameters:
           expression: <<node_hostname>>__equals__ctl01
           cluster_param:
             kubernetes_control_node01_address:
-              value_template: <<node_ip>>
+              value_template: <<node_deploy_ip>>
         kubernetes_control02:
           expression: <<node_hostname>>__equals__ctl02
           cluster_param:
             kubernetes_control_node02_address:
-              value_template: <<node_ip>>
+              value_template: <<node_deploy_ip>>
         kubernetes_control03:
           expression: <<node_hostname>>__equals__ctl03
           cluster_param:
             kubernetes_control_node03_address:
-              value_template: <<node_ip>>
+              value_template: <<node_deploy_ip>>
         kubernetes_compute:
           expression: <<node_hostname>>__startswith__ip
           node_class:
