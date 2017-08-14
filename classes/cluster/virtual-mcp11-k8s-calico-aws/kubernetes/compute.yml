@@ -32,6 +32,7 @@ parameters:
           container-runtime: remote
           container-runtime-endpoint: /var/run/crio.sock
           runtime-request-timeout: 10m
+          experimental-cri: 'true'
     common:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
