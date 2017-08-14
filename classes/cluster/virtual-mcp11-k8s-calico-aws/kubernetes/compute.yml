@@ -41,3 +41,11 @@ parameters:
           - 10.254.0.10
           - 8.8.8.8
           - 8.8.4.4
+
+    system:
+      repo:
+        atomic_team:
+          source: "deb http://ppa.launchpad.net/projectatomic/ppa/ubuntu ${_param:linux_system_codename} main"
+          architectures: amd64
+          key_id: 7AD8C79D
+          key_server: keyserver.ubuntu.com
