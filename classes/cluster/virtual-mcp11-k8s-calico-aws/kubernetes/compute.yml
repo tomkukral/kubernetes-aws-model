@@ -27,6 +27,7 @@ parameters:
         cni:
           image: ${_param:kubernetes_calico_cni_image}
       kubelet:
+        runtime: crio
         daemon_opts:
           container-runtime: remote
           container-runtime-endpoint: /var/run/crio.sock
