@@ -1,0 +1,4 @@
+classes:
+  - cluster.k8s-single.kubernetes
+  - cluster.k8s-single.infra
+  - cluster.overrides

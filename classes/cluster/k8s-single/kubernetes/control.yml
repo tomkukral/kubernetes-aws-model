@@ -1,0 +1,47 @@
+classes:
+  - service.etcd.server.single
+  - system.linux.system.repo.docker
+  - system.salt.minion.cert.k8s_server_single
+  - system.salt.minion.cert.etcd_server_single
+  - system.kubernetes.master.single
+  - cluster.k8s-single
+  - cluster.k8s-single.kubernetes.compute
+parameters:
+  _param:
+    kubernetes_apiserver_port: 443
+  salt:
+    minion:
+      cert:
+        etcd_server:
+          alternative_names: IP:127.0.0.1,IP:${_param:node_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
+        k8s_server:
+          alternative_names: IP:${_param:kubernetes_internal_api_address},DNS:kubernetes.default,DNS:kubernetes.default.svc,IP:10.254.0.1,IP:127.0.0.1
+  etcd:
+    server:
+      source:
+        engine: docker_hybrid
+      ssl:
+        enabled: true
+      setup:
+        calico:
+          key: /calico/v1/ipam/v4/pool/${_param:calico_private_network}-${_param:calico_private_netmask}
+          value: '{"masquerade":true,"cidr":"${_param:calico_private_network}/${_param:calico_private_netmask}"}'
+  kubernetes:
+    master:
+      apiserver:
+        secure_port: ${_param:kubernetes_apiserver_port}
+      etcd:
+        ssl:
+          enabled: true
+      network:
+        etcd:
+          ssl:
+            enabled: true
+#      namespace:
+#        netchecker:
+#          enabled: false
+      addons:
+        netchecker:
+          enabled: false
+        helm:
+          enabled: true
