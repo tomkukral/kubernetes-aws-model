@@ -7,7 +7,7 @@ parameters:
   _param:
     # infra service addresses
     infra_config_hostname: cfg01
-    infra_config_address: 192.168.0.10
+    infra_config_address: 127.0.0.1
     infra_config_deploy_address: ${_param:infra_config_address}
     master_hostname: ${_param:infra_config_hostname}
     master_address: ${_param:infra_config_address}
