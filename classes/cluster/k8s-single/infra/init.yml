@@ -13,9 +13,8 @@ parameters:
     master_hostname: ${_param:infra_config_hostname}
     master_address: ${_param:infra_config_address}
     control_address: ${_param:infra_config_address}
-
-
     apt_mk_version: nightly
+    linux_system_user_sudo: true
   linux:
     network:
       resolv:
