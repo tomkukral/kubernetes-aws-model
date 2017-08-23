@@ -50,3 +50,8 @@ parameters:
           node_class:
             value_template:
               - cluster.<<node_cluster>>.infra.config
+        kubernetes_minions:
+          expression: <<node_hostname>>__startwith__minion
+          node_class:
+            value_template:
+              - cluster.<<node_cluster>>.kubernetes.compute

@@ -10,7 +10,13 @@ parameters:
     kubernetes_calico_image: calico/node:latest
     kubernetes_calico_cni_image: calico/cni:latest
     kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.6.4
-
+  salt:
+    minion:
+      cert:
+        k8s_client:
+          alternative_names: IP:${_param:single_address},DNS:${linux:network:fqdn},DNS:${linux:network:hostname}
+        etcd_client:
+          alternative_names: DNS:${linux:system:name},DNS:${linux:network:fqdn},DNS:${_param:single_address}
   docker:
     host:
       pkgs:
