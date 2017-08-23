@@ -1,6 +1,7 @@
 classes:
   - system.linux.system.repo.ubuntu
   - system.salt.master.pkg
+  - cluster.k8s-single.infra.formulas
   - system.salt.minion.ca.salt_master
   - system.reclass.storage.salt
   - cluster.k8s-single
