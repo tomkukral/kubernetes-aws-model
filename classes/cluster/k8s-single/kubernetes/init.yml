@@ -3,6 +3,12 @@ parameters:
     salt_minion_ca_host: ${_param:infra_config_hostname}.${_param:cluster_domain}
     salt_minion_ca_authority: salt_master_ca
 
+    # images
+    kubernetes_calicoctl_image: calico/ctl:latest
+    kubernetes_calico_image: calico/node:latest
+    kubernetes_calico_cni_image: calico/cni:latest
+    kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.6.4
+
     # kubernetes settings
     kubernetes_admin_user: admin
     kubernetes_admin_password: sbPfel23ZigJF3Bm

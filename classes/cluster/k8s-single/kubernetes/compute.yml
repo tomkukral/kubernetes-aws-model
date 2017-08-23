@@ -5,11 +5,6 @@ classes:
   - system.salt.minion.cert.etcd_client_single
   - cluster.k8s-single
 parameters:
-  _param:
-    kubernetes_calicoctl_image: calico/ctl:latest
-    kubernetes_calico_image: calico/node:latest
-    kubernetes_calico_cni_image: calico/cni:latest
-    kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.6.4
   salt:
     minion:
       cert:
