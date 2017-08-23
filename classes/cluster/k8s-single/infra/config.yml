@@ -1,11 +1,8 @@
 classes:
   - system.linux.system.repo.ubuntu
-  - system.openssh.client.lab
   - system.salt.master.pkg
   - system.salt.minion.ca.salt_master
-  - system.salt.master.api
   - system.reclass.storage.salt
-#  - system.reclass.storage.system.kubernetes_control_single
   - cluster.k8s-single
   - cluster.k8s-single.kubernetes.control
 parameters:

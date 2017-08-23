@@ -37,9 +37,6 @@ parameters:
         etcd:
           ssl:
             enabled: true
-#      namespace:
-#        netchecker:
-#          enabled: false
       addons:
         netchecker:
           enabled: false

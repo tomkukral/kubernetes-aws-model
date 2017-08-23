@@ -1,9 +1,8 @@
 classes:
   - system.linux.system.single
-  - system.linux.system.repo.mcp.extra
+#  - system.linux.system.repo.mcp.extra
   - system.linux.system.repo.mcp.salt
   - system.linux.system.repo.ubuntu
-  - system.openssh.server.team.lab
   - system.openssh.server.team.members.tkukral
 parameters:
   _param:
@@ -11,9 +10,11 @@ parameters:
     infra_config_hostname: cfg01
     infra_config_address: 192.168.0.10
     infra_config_deploy_address: ${_param:infra_config_address}
+    master_hostname: ${_param:infra_config_hostname}
+    master_address: ${_param:infra_config_address}
+    control_address: ${_param:infra_config_address}
 
-#    cluster_domain: dummy.local
-#    cluster_name: dummy
+
     apt_mk_version: nightly
   linux:
     network:

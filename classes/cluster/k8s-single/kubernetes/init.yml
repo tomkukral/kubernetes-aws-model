@@ -3,11 +3,6 @@ parameters:
     salt_minion_ca_host: ${_param:infra_config_hostname}.${_param:cluster_domain}
     salt_minion_ca_authority: salt_master_ca
 
-    # global master config - can be moved to infra.init
-    master_hostname: cfg01
-    master_address: 192.168.0.10
-    control_address: ${_param:master_address}
-
     # kubernetes settings
     kubernetes_admin_user: admin
     kubernetes_admin_password: sbPfel23ZigJF3Bm
