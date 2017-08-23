@@ -1,0 +1,35 @@
+classes:
+  - system.salt.master.single
+parameters:
+  _param:
+    salt_master_environment_repository: "https://github.com/salt-formulas"
+    salt_master_environment_revision: master
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            linux:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-linux.git'
+              revision: ${_param:salt_master_environment_revision}
+            ntp:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-ntp.git'
+              revision: ${_param:salt_master_environment_revision}
+            openssh:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-openssh.git'
+              revision: ${_param:salt_master_environment_revision}
+            kubernetes:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-kubernetes.git'
+              revision: ${_param:salt_master_environment_revision}
+            etcd:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-etcd.git'
+              revision: ${_param:salt_master_environment_revision}
+            docker:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-docker.git'
+              revision: ${_param:salt_master_environment_revision}
