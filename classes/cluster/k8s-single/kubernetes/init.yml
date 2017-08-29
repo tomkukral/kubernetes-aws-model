@@ -19,6 +19,7 @@ parameters:
     kubernetes_control_address: ${_param:master_address}
     kubernetes_control_node01_hostname: ${_param:master_hostname}
     kubernetes_control_node01_address: ${_param:master_address}
+    cluster_local_address: ${_param:single_address}
 
     # etcd stuff
     cluster_node01_hostname: ${_param:kubernetes_control_node01_hostname}
