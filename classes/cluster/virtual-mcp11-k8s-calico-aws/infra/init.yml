@@ -8,7 +8,7 @@ classes:
 parameters:
   _param:
     # infra service addresses
-    infra_config_hostname: cfg01
+    infra_config_hostname: ctl01
     infra_config_address: 10.0.10.10
     infra_config_deploy_address: 10.0.10.10
 
@@ -19,9 +19,9 @@ parameters:
     network:
       resolv:
         dns:
-          - 10.0.0.2
+        - 10.0.0.2
       host:
-        cfg01:
+        ctl01:
           address: ${_param:infra_config_address}
           names:
           - ${_param:infra_config_hostname}
