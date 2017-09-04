@@ -25,7 +25,7 @@ parameters:
       setup:
         calico:
           key: /calico/v1/ipam/v4/pool/${_param:calico_private_network}-${_param:calico_private_netmask}
-          value: '{"masquerade":true,"cidr":"${_param:calico_private_network}/${_param:calico_private_netmask}"}'
+          value: '{"masquerade":true,"cidr":"${_param:calico_private_network}/${_param:calico_private_netmask}","ipip_mode":"always","ipip":"tunl0"}'
   kubernetes:
     master:
       apiserver:
