@@ -1,5 +1,6 @@
 classes:
 - service.etcd.server.cluster
+- service.helm.client
 - system.haproxy.proxy.listen.kubernetes.apiserver
 - system.linux.system.repo.docker
 - system.salt.minion.cert.etcd_server
@@ -16,6 +17,15 @@ parameters:
       cert:
         etcd_server:
           alternative_names: IP:127.0.0.1,DNS:${_param:cluster_vip_address},IP:${_param:cluster_local_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
+  helm:
+    client:
+      repos:
+        mirantisworkloads: https://mirantisworkloads.storage.googleapis.com/
+      releases:
+        prometheus:
+          name: prometheus
+          chart: mirantisworkloads/prometheus
+          namespace: kube-system
   etcd:
     server:
       source:
