@@ -50,11 +50,14 @@ parameters:
       namespace:
         netchecker:
           enabled: true
+    common:
       addons:
-        netchecker:
-          enabled: true
-        helm:
-          enabled: true
+        storageclass:
+          slow_aws:
+            name: standard
+            default: True
+            provisioner: aws-ebs
+            type: gp2
   haproxy:
     proxy:
       listen:
