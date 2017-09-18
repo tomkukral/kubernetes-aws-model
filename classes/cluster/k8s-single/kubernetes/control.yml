@@ -37,8 +37,15 @@ parameters:
         etcd:
           ssl:
             enabled: true
+    common:
       addons:
         netchecker:
           enabled: false
         helm:
-          enabled: true
+          enabled: false
+        storageclass:
+          slow_aws:
+            name: standard
+            default: True
+            provisioner: aws-ebs
+            type: gp2
