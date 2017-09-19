@@ -38,6 +38,9 @@ parameters:
     common:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
+      cloudprovider:
+        enabled: True
+        provider: aws
   linux:
     network:
       resolv:

@@ -32,12 +32,6 @@ parameters:
     calico_private_network: 10.0.128.0
     calico_private_netmask: 17
 
-  kubernetes:
-    common:
-      cloudprovider:
-        enabled: True
-        provider: aws
-
   linux:
     network:
       resolv:
