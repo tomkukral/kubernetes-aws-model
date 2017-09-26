@@ -26,6 +26,13 @@ parameters:
           image: ${_param:kubernetes_calicoctl_image}
         cni:
           image: ${_param:kubernetes_calico_cni_image}
+      kubelet:
+        runtime: crio
+        daemon_opts:
+          container-runtime: remote
+          container-runtime-endpoint: /var/run/crio.sock
+          runtime-request-timeout: 10m
+          experimental-cri: 'true'
     common:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
@@ -36,3 +43,11 @@ parameters:
           - 10.254.0.10
           - 8.8.8.8
           - 8.8.4.4
+
+    system:
+      repo:
+        atomic_team:
+          source: "deb http://ppa.launchpad.net/projectatomic/ppa/ubuntu ${_param:linux_system_codename} main"
+          architectures: amd64
+          key_id: 7AD8C79D
+          key_server: keyserver.ubuntu.com
