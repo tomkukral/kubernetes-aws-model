@@ -4,6 +4,7 @@ classes:
   - system.salt.minion.cert.k8s_client_single
   - system.salt.minion.cert.etcd_client_single
   - cluster.k8s-single
+  - cluster.k8s-single.nfs.client
 parameters:
   _param:
     # images

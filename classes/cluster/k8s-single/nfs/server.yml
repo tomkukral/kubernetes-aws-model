@@ -1,0 +1,14 @@
+classes:
+  - service.nfs.server
+parameters:
+  nfs:
+    server:
+      share:
+        shared:
+          path: /mnt/storage/
+          host:
+            inter:
+              host: "*"
+              params:
+                - rw
+                - sync

@@ -5,6 +5,7 @@ classes:
   - system.reclass.storage.salt
   - cluster.k8s-single
   - cluster.k8s-single.kubernetes.control
+  - cluster.k8s-single.nfs.server
 parameters:
   _param:
     salt_master_base_environment: prd
@@ -20,6 +21,13 @@ parameters:
       reactor:
         reclass/minion/classify:
           - salt://reclass/reactor/node_register.sls
+      environment:
+        dev:
+          formula:
+            nfs:
+              source: git
+              address: https://github.com/salt-formulas/salt-formula-nfs.git
+              revision: master
   reclass:
     storage:
       data_source:

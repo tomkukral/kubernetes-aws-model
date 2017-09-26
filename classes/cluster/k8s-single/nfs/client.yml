@@ -1,0 +1,20 @@
+classes:
+  - service.nfs.client
+parameters:
+  nfs:
+    client:
+      enabled: true
+      mount:
+        shared:
+          path: /mnt/shared
+          fstype: nfs
+          device: ${_param:infra_config_address}:/mnt/storage
+
+#  linux:
+#    storage:
+#      mount:
+#        nfs:
+#          enabled: true
+#          path: /var/lib/glance
+#          file_system: nfs
+#          device: 10.0.103.152:/storage/glance/vpc20
