@@ -13,6 +13,7 @@ parameters:
     kubernetes_controller-manager_token: uXrdZ1YKF6qlYm3sHje2iEXMGAGDWOIU
     kubernetes_dns_token: 0S1I4iJeFjq5fopPwwCwTp3xFpEZfeUl
     etcd_initial_token: IN7KaRMSo3xkGxkjAAPtkRkAgqN4ZNRq
+    kubernetes_apiserver_port: 6443
 
     # addresses and hostnames
     kubernetes_internal_api_address: ${_param:master_address}

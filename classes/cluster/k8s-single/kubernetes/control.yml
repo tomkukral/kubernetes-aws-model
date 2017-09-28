@@ -7,8 +7,6 @@ classes:
   - cluster.k8s-single
   - cluster.k8s-single.kubernetes.compute
 parameters:
-  _param:
-    kubernetes_apiserver_port: 443
   salt:
     minion:
       cert:

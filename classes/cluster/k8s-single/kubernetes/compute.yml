@@ -26,6 +26,8 @@ parameters:
         - python-docker
   kubernetes:
     pool:
+      apiserver:
+        secure_port: ${_param:kubernetes_apiserver_port}
       network:
         etcd:
           ssl:
