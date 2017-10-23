@@ -5,6 +5,12 @@ classes:
   - system.salt.minion.cert.etcd_client_single
   - cluster.k8s-single
 parameters:
+  _param:
+    # images
+    kubernetes_calicoctl_image: calico/ctl:v1.6.1
+    kubernetes_calico_image: calico/node:v1.6.1
+    kubernetes_calico_cni_image: calico/cni:v1.6.1
+
   salt:
     minion:
       cert:
