@@ -13,8 +13,8 @@ parameters:
   docker:
     host:
       pkgs:
-        - docker-engine=1.12.6-0~ubuntu-xenial
-        - python-docker
+      - docker-engine=1.12.6-0~ubuntu-xenial
+      - python-docker
   kubernetes:
     pool:
       network:
@@ -30,9 +30,13 @@ parameters:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
   linux:
+    system:
+      kernel:
+        sysctl:
+          vm.max_map_count: 262144
     network:
       resolv:
         dns:
-          - 10.254.0.10
-          - 8.8.8.8
-          - 8.8.4.4
+        - 10.254.0.10
+        - 8.8.8.8
+        - 8.8.4.4
