@@ -29,3 +29,14 @@ parameters:
     system:
       name: ${_param:infra_config_hostname}
       domain: ${_param:cluster_domain}
+      user:
+        ubuntu:
+          name: 'Workshop user'
+          enabled: true
+          sudo: true
+          full_name: 'Ubuntu User'
+          home: '/home/ubuntu'
+          password: '$6$VsjbU/n9xiYWdvm6$/rEfLSjh3R1lWpV31KL30m0BPvfZudq/hBB3b/JC/Xw96FN2Sepm0qGkKCiun50dglh5AzHB2vmalsPGN5EaJ0'
+  openssh:
+    server:
+      password_auth: true
