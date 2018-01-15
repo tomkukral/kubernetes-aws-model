@@ -18,7 +18,7 @@ parameters:
     kubernetes_calicoctl_image: calico/ctl:latest
     kubernetes_calico_image: calico/node:latest
     kubernetes_calico_cni_image: calico/cni:latest
-    kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.9.1
+    kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.8.4
 
     # addresses and hostnames
     kubernetes_internal_api_address: 10.254.0.1
