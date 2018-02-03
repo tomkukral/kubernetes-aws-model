@@ -20,6 +20,7 @@ parameters:
     salt_master_host: 127.0.0.1
   salt:
     master:
+      worker_threads: 2
       reactor:
         reclass/minion/classify:
         - salt://reclass/reactor/node_register.sls
