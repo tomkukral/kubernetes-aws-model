@@ -10,3 +10,11 @@ parameters:
           ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
           common_name: admin
           signing_policy: cert_client
+        k8s_developer:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          key_file: /etc/kubernetes/ssl/develoer.key
+          cert_file: /etc/kubernetes/ssl/developer.crt
+          ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
+          common_name: developer
+          signing_policy: cert_client
