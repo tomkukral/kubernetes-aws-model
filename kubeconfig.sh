@@ -1,4 +1,3 @@
-{%- from "kubernetes/map.jinja" import common with context -%}
 #!/bin/bash
 
 export CERTFILE="$1"
