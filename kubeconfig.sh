@@ -20,11 +20,11 @@ clusters:
 contexts:
 - context:
     cluster: remote
-    user: admin-remote
+    user: ${CERTFILE}
   name: remote
 current-context: remote
 users:
-- name: admin
+- name: ${CERTFILE}
   user:
     client-certificate-data: ${cert}
     client-key-data: ${key}
