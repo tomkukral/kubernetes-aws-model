@@ -14,7 +14,7 @@ parameters:
         k8s_developer:
           host: ${_param:salt_minion_ca_host}
           authority: ${_param:salt_minion_ca_authority}
-          key_file: /etc/kubernetes/ssl/develoer.key
+          key_file: /etc/kubernetes/ssl/developer.key
           cert_file: /etc/kubernetes/ssl/developer.crt
           ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
           common_name: developer
@@ -22,16 +22,16 @@ parameters:
         k8s_manager:
           host: ${_param:salt_minion_ca_host}
           authority: ${_param:salt_minion_ca_authority}
-          key_file: /etc/kubernetes/ssl/develoer.key
-          cert_file: /etc/kubernetes/ssl/developer.crt
+          key_file: /etc/kubernetes/ssl/manager.key
+          cert_file: /etc/kubernetes/ssl/manager.crt
           ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
           common_name: manager
           signing_policy: cert_client
         k8s_monitoring:
           host: ${_param:salt_minion_ca_host}
           authority: ${_param:salt_minion_ca_authority}
-          key_file: /etc/kubernetes/ssl/develoer.key
-          cert_file: /etc/kubernetes/ssl/developer.crt
+          key_file: /etc/kubernetes/ssl/monitoring.key
+          cert_file: /etc/kubernetes/ssl/monitoring.crt
           ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
           common_name: monitoring
           signing_policy: cert_client
