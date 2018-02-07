@@ -8,6 +8,7 @@ classes:
 - cluster.virtual-mcp11-k8s-calico-aws.kubernetes.compute
 - cluster.virtual-mcp11-k8s-calico-aws.kubernetes.certs
 #- cluster.virtual-mcp11-k8s-calico-aws.kubernetes.rbac
+#- cluster.virtual-mcp11-k8s-calico-aws.kubernetes.podpreset
 - cluster.virtual-mcp11-k8s-calico-aws
 parameters:
   _param:

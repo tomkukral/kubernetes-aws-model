@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat /etc/kubernetes/addons/dns/kubedns-sa.yaml | sed 's/kube-dns/kube-dns-autoscaler/' | kubectl apply -
+cat /etc/kubernetes/addons/dns/kubedns-sa.yaml | sed 's/kube-dns/kube-dns-autoscaler/' | kubectl apply -f -
 
 systemctl stop kube-addon-manager
 
