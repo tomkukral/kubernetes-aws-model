@@ -21,10 +21,10 @@ parameters:
           alternative_names: IP:127.0.0.1,DNS:${_param:cluster_vip_address},IP:${_param:cluster_local_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
         k8s_proxy:
           alternative_names: DNS:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
-#        k8s_scheduler:
-#          alternative_names: DNS:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
-#        k8s_controller_manager:
-#          alternative_names: DNS:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
+        k8s_scheduler:
+          alternative_names: DNS:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
+        k8s_controller_manager:
+          alternative_names: DNS:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
 
 #  helm:
 #    client:
