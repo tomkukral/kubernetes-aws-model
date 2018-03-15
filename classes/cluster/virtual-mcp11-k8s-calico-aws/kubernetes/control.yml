@@ -51,9 +51,12 @@ parameters:
         ssl:
           enabled: true
       network:
-        etcd:
-          ssl:
-            enabled: true
+        cnis:
+        - calico
+        calico:
+          etcd:
+            ssl:
+              enabled: true
       namespace:
         netchecker:
           enabled: true
