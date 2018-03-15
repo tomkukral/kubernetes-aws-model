@@ -24,14 +24,15 @@ parameters:
   kubernetes:
     pool:
       network:
-        etcd:
-          ssl:
-            enabled: true
-        image: ${_param:kubernetes_calico_image}
-        calicoctl:
-          image: ${_param:kubernetes_calicoctl_image}
-        cni:
-          image: ${_param:kubernetes_calico_cni_image}
+        cnis:
+        - calico
+        calico:
+          etcd:
+            ssl:
+              enabled: true
+          image: ${_param:kubernetes_calico_image}
+          calicoctl_image: ${_param:kubernetes_calicoctl_image}
+          cni_image: ${_param:kubernetes_calico_cni_image}
     common:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
