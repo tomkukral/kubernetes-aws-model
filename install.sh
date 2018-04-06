@@ -15,6 +15,8 @@ sleep 5
 salt "*" state.sls linux,openssh,salt.minion,ntp
 
 # Create and distribute SSL certificates for services using salt state
+salt -C I@salt:minion:ca state.sls salt.minion.ca
+sleep 5
 salt '*' state.sls salt.minion.cert
 sleep 5
 
