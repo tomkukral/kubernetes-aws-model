@@ -1,0 +1,3 @@
+parameters:
+  _param:
+    cluster_domain: eu-central-1.compute.interna
