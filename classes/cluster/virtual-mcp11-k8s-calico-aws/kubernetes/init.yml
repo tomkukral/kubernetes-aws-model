@@ -15,9 +15,9 @@ parameters:
     etcd_initial_token: IN7KaRMSo3xkGxkjAAPtkRkAgqN4ZNRq
 
     # images
-    kubernetes_calicoctl_image: calico/ctl:v1.6.1
-    kubernetes_calico_image: calico/node:v1.6.1
-    kubernetes_calico_cni_image: calico/cni:v1.6.1
+    kubernetes_calicoctl_image: calico/ctl:v3.1.0
+    kubernetes_calico_image: calico/node:v3.1.0
+    kubernetes_calico_cni_image: calico/cni:v3.1.0
     kubernetes_hyperkube_image: gcr.io/google_containers/hyperkube-amd64:v1.8.4
 
     # addresses and hostnames
