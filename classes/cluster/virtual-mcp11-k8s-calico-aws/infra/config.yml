@@ -35,7 +35,7 @@ parameters:
             kubernetes:
               source: git
               address: https://github.com/tomkukral/salt-formula-kubernetes.git
-              revision: 10ed90818f7b5d2c2b7b10e17adb5d719b7187f0
+              revision: calico-fix
     minion:
       cert:
         k8s_server:
