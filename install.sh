@@ -34,6 +34,8 @@ salt -C 'I@docker:host' cmd.run "docker ps"
 salt -C 'I@etcd:server' state.sls etcd.server.service
 sleep 5
 salt -C 'I@etcd:server' cmd.run ". /var/lib/etcd/configenv && etcdctl cluster-health"
+sleep 5
+salt -C 'I@etcd:server' state.sls etcd.server.service
 
 # Install Kubernetes and Calico
 salt -C 'I@kubernetes:master' state.sls kubernetes.master.kube-addons
