@@ -35,7 +35,7 @@ parameters:
             kubernetes:
               source: git
               address: https://github.com/tomkukral/salt-formula-kubernetes.git
-              revision: workshop-aio
+              revision: workshop
     minion:
       cert:
         k8s_server:
