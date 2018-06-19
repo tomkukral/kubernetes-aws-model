@@ -1,7 +1,9 @@
-#!/bin/bash -xe
+#!/bin/bash
 
 # Refresh salt master config
 salt -C 'I@salt:master' state.sls salt.master,reclass
+
+set -xe
 
 # Refresh minion's pillar data
 salt '*' saltutil.refresh_pillar
