@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#cat /etc/kubernetes/addons/dns/kubedns-sa.yaml | sed 's/kube-dns/kube-dns-autoscaler/' | kubectl apply -f -
+kubectl delete -f /etc/kubernetes/addons/dns/
+kubectl apply -f coredns.yml
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 kubectl label nodes --all --overwrite node-role.kubernetes.io/master-
